@@ -7,7 +7,7 @@ class Canvas extends Component {
 		super(props);
 
 		this.onMouseDown = this.onMouseDown.bind(this);
-		this.onMouseMove = this.onMosueMove.bind(this);
+		this.onMouseMove = this.onMouseMove.bind(this);
 		this.endPaintEvent = this.endPaintEvent.bind(this);
 
 		this.pusher = new Pusher('PUSHER_KEY', {
@@ -25,11 +25,11 @@ class Canvas extends Component {
 	onMouseDown({ nativeEvent }) {
 		const { offsetX, offsetY } = nativeEvent;
 		this.isPainting = true;
-		this.prevPos = { offsetx, offsetY };
+		this.prevPos = { offsetX, offsetY };
 	}
 
 	onMouseMove({ nativeEvent }) {
-		if (thids.isPainting) {
+		if (this.isPainting) {
 			const { offsetX, offsetY } = nativeEvent;
 			const offSetData = { offsetX, offsetY };
 			this.position = {
