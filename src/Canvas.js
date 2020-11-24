@@ -81,19 +81,19 @@ class Canvas extends Component {
 		this.canvas.width = 1000;
 		this.canvas.height = 800;
 		this.ctx = this.canvas.getContext('2d');
-		this.ctx.linJoin = 'round';
-		this.ctx.linCap = 'round';
+		this.ctx.lineJoin = 'round';
+		this.ctx.lineCap = 'round';
 		this.ctx.lineWidth = 5;
 
 		const channel = this.pusher.subscribe('painting');
-		channel.bind('draw', (data => {
+		channel.bind('draw', (data) => {
 			const { userId, line } = data;
 			if (userId !== this.userId) {
 				line.forEach((position) => {
 					this.paint(position.start, position.stop, this.guestStrokeStyle);
 				});
 			}
-		}));
+		});
 	}
 
 	render() {
