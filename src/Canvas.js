@@ -52,12 +52,12 @@ class Canvas extends Component {
 		const { offsetX, offsetY } = currPos;
 		const { offsetX: x, offsetY: y } = prevPos;
 
-		this.ctx.beginPath():
+		this.ctx.beginPath();
 		this.ctx.strokeStyle = strokeStyle;
 		this.ctx.moveTo(x, y);
 		this.ctx.lineTo(offsetX, offsetY);
 		this.ctx.stroke();
-		this.prevPos = { offsetx, offsetY };
+		this.prevPos = { offsetX, offsetY };
 	}
 
 	async sendPaintData() {
