@@ -25,6 +25,7 @@ app.use((req, res, next) => {
 });
 
 app.post('/paint', (req, res) => {
+	console.log('post hit')
 	pusher.trigger('painting', 'draw', req.body);
 	res.json(req.body);
 });
